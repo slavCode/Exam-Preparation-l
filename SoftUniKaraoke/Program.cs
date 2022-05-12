@@ -46,7 +46,8 @@ namespace SoftUniKaraoke
                 return;
             }
 
-            var sortedParticipants = resultedParticipants.OrderByDescending(a => a.Value.Count()).ThenBy(p => p.Key);
+            var sortedParticipants = resultedParticipants
+                                        .OrderByDescending(a => a.Value.Count()).ThenBy(p => p.Key);
             foreach (var participant in sortedParticipants)
             {
                 Console.WriteLine($"{participant.Key}: {participant.Value.Count()} awards");
